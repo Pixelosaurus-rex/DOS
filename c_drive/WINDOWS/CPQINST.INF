@@ -1,0 +1,28 @@
+[SECTIONS]
+ITEM1 = ADDAPPS
+ITEM2 = UPDATE
+
+[ADDAPPS]
+ITEM1 = Utilitaires Compaq,creadme.wri,Compaq Lisezmoi,cpqicons.dll,0,10,10,,,1
+ITEM2 = Utilitaires Compaq,wcursor.exe,Wcursor,wcursor.exe,0,80,10,,,1
+ITEM3 = Utilitaires Compaq,Ezhelp.pif,Bibliothèque d'aide en ligne EZ Help,cpqicons.dll,1,150,10,,,1
+ITEM4 = Utilitaires Compaq,pwrcon.pif,PwrCon,cpqicons.dll,2,220,10,,,1,LAPTOP
+
+[UPDATE]
+Item1 = SYSTEM.INI
+
+[SYSTEM.INI]
+item1 = 386enh, device, cpqint13.386, REPLACE
+item2 = 386enh, device, cpqwdctl.386, REPLACE
+item3 = 386enh, 32BitDiskAccess, ON, REPLACE
+item4 = 386enh, device, vhiberd.386, ADD, LAPTOP
+
+[REPLACE]
+item1 = *int13, cpqint13.386
+item2 = *wdctrl, cpqwdctl.386
+item3 = OFF, ON
+
+[LAPTOP]
+MachineType=portable
+
+

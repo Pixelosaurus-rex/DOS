@@ -1,0 +1,1073 @@
+INSTALL.TXT
+-----------
+
+Ce fichier contient des informations sur les problŠmes qui risquent
+de se produire pendant l'installation, et plus particuliŠrement avec
+les programmes r‚sidant en m‚moire et lors de l'ex‚cution de Novell Netware.
+Si vous utilisez ce type de logiciel avec la version Beta 3.1 de windows,
+lisez les informations suivantes AVANT d'installer Windows.
+
+
+Remarques g‚n‚rales sur l'installation
+======================================
+Dans cette section, vous trouverez des remarques sur les configurations
+sp‚cifiques qui risquent d'empˆcher le programme Windows Install
+d'installer avec succŠs la version 3.1 de Windows. Vous y trouverez aussi une
+solution pour chaque problŠme. V‚rifiez pour voir si tout mat‚riel ou logiciel 
+que vous utilisez figure sur cette liste et suivez les recommandations 
+propros‚es AVANT d'ex‚cuter le programme d'installation.
+
+
+Economiseurs d'‚cran MS-DOS
+---------------------------
+
+Si vous ex‚cutez un ‚conomiseur d'‚cran MS-DOS, vous devez le d‚sactiver 
+avant d'ex‚cuter le programme Install. Ces ‚conomiseurs d'‚cran peuvent ˆtre 
+la cause de problŠmes lorsque vous ex‚cutez le programme Install.
+
+
+Ordinateurs Compaq Computer avec la version 5.0 de MS-DOS 5 et des 
+affichages EGA ou VGA
+------------------------------------------------------------------
+Avant d'installer Windows, regardez dans votre fichier CONFIG.SYS pour 
+vous assurer que ces gestionnaires apparaissent dans l'ordre suivant :
+
+    HIMEM.SYS
+    EMM386.EXE
+    ANSI.SYS
+
+Si ANSI.SYS est charg‚ avant HIMEM.SYS ou EMM386.EXE, il est possible 
+que le programme Installe relance votre systŠme avant que Windows ne soit 
+install‚. De plus, si vous utilisez la ligne de commande DOS=HIGH,UMB 
+pour charger MS-DOS dans la m‚moire haute, le fait de charger 
+EMM386.EXE avant ANSI.SYS cr‚‚ la quantit‚ maximale d'espace de 
+m‚moire haute sur un ordinateur Compaq.
+
+
+Ordinateurs AT&T Safari
+-----------------------
+Si vous avez un ordinateur AT&T Safari, il n'est pas possible d'installer 
+Windows dans un nouveau r‚pertoire pour conserver … la fois les versions 3.0 
+et 3.1 de Windows. Vous devez mettre la version 3.0 … niveau. Si vous 
+installez la version 3.1 dans son propre r‚pertoire. elle n'utilisera pas les 
+gestionnaires sp‚ciaux exig‚s pour pouvoir ˆtre ex‚cut‚e sur un ordinateur 
+Safari.
+
+
+Utilisation du gestionnaire d'affichage TIGA
+--------------------------------------------
+Si vous utilisez le gestionnaire d'affichage TIGA, TIGACD doit ˆtre install‚ 
+manuellement avant d'ex‚cuter le programme Install pour mettre Windows … 
+niveau, sinon Windows ne mettra pas correctement votre systŠme … niveau.
+
+AprŠs avoir install‚ Windows, vous pouvez augmenter la quantit‚ de m‚moire 
+conventionnelle disponible en mode 386 ‚tendu pour les applications non-
+Windows en chargeant TIGACD … partir du fichier WINSTART.BAT. Notez 
+que le fichier WINSTART.BAT ne s'ex‚cute que si vous ex‚cutez Windows en 
+mode 386 ‚tendu. Si vous voulez ex‚cuter Windows en mode Standard, vous 
+devez manuellement charger TIGACD. Pour plus d'informations, lisez le 
+fichier en ligne LISEZMOI.WRI
+
+
+Utilisation des polices TrueType avec des gestionnaires d'affichage ext‚rieurs
+------------------------------------------------------------------------------
+Si vous utilisez l'un des gestionnaires d'affichage pour les affichages figurant 
+dans la liste ci-dessous, les polices True Type risquent d'ˆtre d‚form‚es sur 
+votre ‚cran. Un gestionnaire mis … jour est peut-ˆtre disponible dans Windows 
+Driver Library ou chez votre fabricant d'affichages. Contactez Microsoft pour 
+obtenir des informations sur Windows Drivers Library, ou contactez votre 
+fabricant d'affichages pour savoir comment vous procurer un gestionnaire mis 
+… jour.
+
+Gestionnaire		Affichage			Fabricant
+------------		---------			---------
+DGIS*		      Compaq AG1024			Graphics Software
+		      Spectragraphics Squeegee		Systems, Inc.
+		      NEC MultiSynch Graphics Engine
+		      Zenith Z-649
+
+IAA		      IBM Image Adapter/A		IBM
+
+ATI 8514	      ATI Graphics Ultra		ATI Technologies
+		      ATI Graphics Vantage
+RGDI*		      Appian Rendition I		Appian, Inc.
+		      Appian Rendition II
+		      Appian Rendition III
+		      Appian GV1024
+		      Dec pc 433
+
+* DGIS: Direct Graphics Interface Standard
+* RGDI: Renaissance Graphics Device Interface
+
+
+Utilisation de Stacker
+----------------------
+Cette section d‚crit les ‚tapes n‚cessaires pour installer Windows si vous 
+utilisez Stacker pour compresser votre disque dur. Elle aborde aussi les 
+problŠmes que Stacker peut cr‚er lors de l'installation. Vous trouverez 
+‚galement dans cette section des solutions … ces problŠmes.
+
+*  Si vous d‚cidez d'utiliser un fichier d'‚change avec Windows, il vous faudra
+    installer cette copie sur un lecteur non compress‚. AprŠs avoir install‚
+    Stacker, vous pouvez laisser un m‚gaoctet d'espace disque non compress‚
+    pour stocker les fichiers systŠme. Pour laisser suffisamment d'espace au
+    fichier d'‚change, il est recommand‚ que la quantit‚ d'espace disque que
+    vous laissez non compress‚e soit ‚gale … au moins deux fois la quantit‚ de
+    m‚moire dont vous disposez dans le systŠme. Par exemple, si votre systŠme
+    a 4 m‚gaoctets de m‚moire, il faut que vous ayez au moins 8 m‚gaoctets d'espace
+    disque non compress‚
+
+*  Lorsque vous avez install‚ Stacker, il est possible qu'il ait ajout‚ la ligne
+    SSWAP … votre fichier  CONFIG.SYS pour remplacer la lettre du disque dur
+     logique cr‚‚ par Stacker par la lettre du disque dur physique. A cause de
+     cela, le programme Install ne peut pas modifier vos fichiers CONFIG.SYS
+     ou AUTOEXEC.BAT lorsque vous installez Windows sur un lecteur
+     compress‚. Install affiche un message pour vous signaler le problŠme et
+     enregistre ensuite les changements propos‚s dans les fichiers CONFIG.SYS
+     et AUTOEXEC.WIN. Vous devrez modifier vous-mˆme les fichiers
+     CONFIG.SYS et AUTOEXEC.BAT pour vous assurer  que les fichiers
+     systŠme dont Windows a besoin, (normalement HIMEM.SYS,
+     SMARTDRV.EXE, et EMM386.EXE) sont charg‚s lorsque vous mettez
+     votre ordinateur en marche.
+
+    Vous pouvez proc‚der de la maniŠre suivante :
+
+   1. cr‚ez un r‚pertoire sur le lecteur non compress‚ dont le nom est mˆme
+    que celui de votre r‚pertoire Windows, comme par exemple \WINDOWS ;
+
+   2. apportez les modifications propos‚es … vos fichiers CONFIG.SYS et
+      AUTOEXEC.BAT sur le lecteur non compress‚ ;
+
+   3. copiez les fichiers figurant dans CONFIG.WIN et AUTOEXEC.WIN
+      du lecteur compress‚ au lecteur non compress‚ ;
+
+   Il existe un autre moyen de proc‚der qui consiste … modifier le fichier
+    CONFIG.SYS de maniŠre … ce que les lignes qui chargent les gestionnaires 
+   et fichiers requis apparaissent APRES la ligne SSWAP.
+
+*  Pour optimiser la performance, n'utilisez pas SMARTDrive pour vous servir
+     du lecteur compress‚ comme cache. Il vous suffit d'utiliser le lecteur non
+     compress‚ comme cache. Vous pouvez inclure des options sur la ligne
+     SMARTDRV.EXE du fichier CONFIG.SYS pour sp‚cifier les lecteurs …
+     utiliser comme cache.
+
+   Par exemple, si l'utilitaire Stacker a substitu‚ le lecteur D au lecteur C et que
+    C est le lecteur compress‚ et D le lecteur non compress‚, incluez la ligne
+    suivante dans votre fichier  CONFIG.SYS :
+
+    device=\windows\smartdrv.exe C- D+
+
+Pour plus d'information sur les fichiers d'‚change et l'utilisation de 
+SMARTDrive, voir le chapitre 14, ® Optimisation de Windows ¯ du Guide 
+de l'utilisateur de Microsoft Windows.
+
+
+Modifier vous-mˆme les fichiers CONFIG.SYS et AUTOEXEC.BAT
+----------------------------------------------------------
+Lorsque le programme Install installe Windows, il place les fichiers 
+HIMEM.SYS, SMARTDRV.EXE et EMM386.EXE dans le r‚pertoire 
+Windows. Si ce dernier se trouve sur un disque, tel qu'un disque externe, 
+amovible ou non local  qui n'est pas disponible lorsque d‚marrez l'ordinateur, 
+ou si Install d‚tecte l'une des conditions suivantes :
+
+- votre lecteur d'amor‡age ou le lecteur sur lequel vous voulez installer
+   Windows a ‚t‚ modifi‚ pour un utiilitaire de compression de disque ;
+
+- votre fichier CONFIG.SYS contient des r‚f‚rences pour bloquer les
+   gestionnaires de p‚riph‚riques ;
+
+il ne modifie pas automatiquement les fichiers CONFIG.SYS ou 
+AUTOEXEC.BAT. Au lieu de cela. Install  inscrit les changements dans les 
+fichiers CONFIG.WIN et AUTOEXEC.WIN, ou dans les fichiers CONFIG.00x 
+et AUTOEXEC.00x. Dans ce cas, vous devez soit d‚placer les fichiers 
+HIMEM.SYS, SMARTDRV.EXE et EMM386.EXE sur un lecteur qui est 
+disponible lorsque vous d‚marrez votre ordinateur, soit utiliser un ‚diteur de 
+texte pour modifier les fichiers CONFIG.SYS ou AUTOEXEC.BAT de 
+maniŠre … ce que toute r‚f‚rence … HIMEM.SYS, SMARTDRV.EXE et 
+EMM386.EXE apparaisse dans votre fichier CONFIG.SYS APRES le device= 
+utilis‚ pour charger les gestionnaires pour vos lecteurs de disques. Pour les 
+changements propos‚s, r‚f‚rez-vous aux fichiers CONFIG.WIN et 
+AUTOEXEC.WIN ou aux fichiers CONFIG.00x et AUTOEXEC.00x.
+
+
+Installation d'affichages XGA sur un PS/2, modŠle 75 ou 90
+----------------------------------------------------------
+Si vous disposez d'un PS/2, modŠle 75 ou 90 avec un affichage XGA, le 
+programme Windows Install configure l'affichage pour une r‚solution 640x480 
+16 couleurs. NE CHANGEZ PAS cette configuration pendant l'installation. Le 
+fait de sp‚cifier une autre configuration XGA pour l'affichage pendant 
+l'installation de Windows risque de bloquer Install.
+
+AprŠs avoir r‚ussi … installer Windows, vous pouvez alors configurer votre 
+affichage XGA pour utiliser une autre r‚solution ou 256 couleurs, si votre 
+moniteur les gŠrent. Pour plus d'informations sur la maniŠre de proc‚der, lisez 
+la section ® IBM XGA : configuration de la couleur et r‚solution ¯ dans le 
+document en ligne LISEZMOI.WRI. S‚lectionnez l'ic“ne ® Lisez-moi ¯ dans 
+le groupe Principal du Gestionnaire de programmes.
+
+Si vous utilisez l'‚cran … plasma sur le PS/2, modŠle 75, N'UTILISEZ QUE la 
+configuration 480x640, 16 couleurs. Si vous changez cette configuration sur ce 
+type d'‚cran, le message d'attente de MS-DOS s'affichera lorsque vous tenterez 
+de lancer Windows.
+
+
+Comment corriger les erreurs de copie du fichier Install lors
+de la mise … niveau
+-------------------------------------------------------------
+Il se peut qu'Install n'ait pas correctement estim‚ la quantit‚ d'espace disque 
+disponible lors de la mise … niveau de la version finale Beta 3.1 de Windows. 
+Assurez-vous d'avoir au moins 5 m‚gaoctets d'espace disque disponible avant 
+de mettre Windows 3.1 … niveau. Il est possible de corriger ce problŠme dans 
+le produit disponible sur le march‚.
+
+
+Comment corriger l'erreur d'installation #S020
+----------------------------------------------
+Il se peut que vous receviez ce message si vos fichiers WIN.INI ou 
+SYSTEM.INI sont particuliŠrement volumineux. Ceci peut se produire si vous 
+avez plusieurs fois remis … niveau la version 3.1 de Windows. Pour rem‚dier … 
+ce problŠme, modifiez ces fichiers *.INI avec un ‚diteur de texte et supprimez 
+toutes les informations dont vous n'avez pas besoin (comme par exemple, pour 
+les polices, les imprimantes, des applications sp‚cifiques, etc.), ou bien, vous 
+pouvez ‚liminer cette erreur en installant la version finale de Windows dans un 
+nouveau r‚pertoire.
+
+
+Corriger le message d'erreur ®Erreur d'environnement insuffisant¯
+-----------------------------------------------------------------
+Si le message ®Erreur d'environnement insuffisant¯ s'affiche lorsque vous 
+relancez votre systŠme aprŠs avoir install‚ Windows, il existe deux solutions 
+pour r‚soudre le problŠme.
+
+1. Vous pouvez augmenter la taille de votre environnement en ajoutant la ligne
+    de commande SHELL= … votre fichier CONFIG.SYS. Consultez le manuel
+    de MS-DOS pour obtenir plus d'informations sur la commande SHELL et 
+    sur la modication de votre fichier CONFIG.SYS.
+
+2. Vous pouvez placer les commandes SET de votre fichier AUTOEXEC.BAT
+    au d‚but du fichier pour qu'elles soient ex‚cut‚es avant les commandes qui
+     chargent les programmes r‚sidant en m‚moire (TSR). tels que
+    SMARTDrive.
+
+
+Si Install ne d‚tecte pas le r‚seau
+-----------------------------------
+Si un r‚seau est install‚ et que Install sp‚cifie ® Aucun logiciel de r‚seau 
+install‚¯ sur l'‚cran ®Informations systŠme¯, Install n'est pas capable de 
+d‚tecter votre r‚seau. Pour qu'Install puisse d‚tecter certains r‚seaux, le 
+r‚pertoire qui contient les fichiers du programme du r‚seau doivent ˆtre inclus 
+dans votre chemin. Ce problŠme existe surtout avec les r‚seaux suivants : 
+3Share, 3Open, Lan Manager et MSNet. Si votre chemin n'inclut pas le 
+r‚pertoire sur lequel se trouvent les fichiers du r‚seau, vous pouvez soit :
+
+- ajouter le r‚pertoire … la ligne PATH de votre fichier AUTOEXEC.BAT ; 
+
+-  ex‚cuterInstallation personnalis‚e, puis sp‚cifier le nom de chemin 
+   complet de votre r‚seau sur l'‚cran ®Informations systŠme¯
+
+Caract‚risitique (TSR/DRIVER) dans Install
+==========================================
+
+Nous avons test‚ une vari‚t‚ de programmes r‚sidant en m‚moire avec 
+Windows 3.1. Nous avons d‚couvert qu'avec certains programmes utilis‚s avec 
+Windows 3.1, des problŠmes risquent de se produire.
+
+Pendant l'ex‚cution du programme d'installation de Windows 3.1, nous 
+v‚rifions dans le systŠme les programmes r‚sidant en m‚moire. Nous 
+examinons les fichiers AUTOEXEC.BAT et CONFIG.SYS et nous regardons 
+aussi pour voir quels programmes sont actuellement ex‚cut‚s dans la m‚moire. 
+Si nous nous apercevons que vous avez des difficult‚s … ex‚cuter Windows 3.1, 
+un message s'affichera sur votre ‚cran et vous pourrez alors continuer 
+l'ex‚cution d'Install ou quitter ce programme.
+
+Si vous recevez un message concernant les programmes r‚sidant en m‚moire 
+(appel‚s aussi TSR ou gestionnaires) nous vous recommandons d'effectuer les 
+‚tapes suivantes :
+
+1.  Lisez les informations relatives … votre programme dans SETUP.TXT 
+    Utilisez ces informations pour d‚terminer si vous devez installer Windows
+    3.1 alors que ce programme est charg‚ (il se peut que la situation telle
+     qu'elle se pr‚sente n'affectera pas l'installation de Windows 3.1).
+
+    Si vous d‚cidez d'installer Windows 3.1 sans faire de changements, suivez
+    les instructions … l'‚cran pour continuer l'installation.
+
+2.  Si aprŠs avoir lu les informations relatives … votre programme, vous d‚cidez
+    de NE PAS installer Windows 3.1 alors que le ou les programmes sont
+    charg‚s, suivez les instructions … l'‚cran pour quitter le programme Install.
+
+3.  Enlevez les programmes r‚sidant en m‚moire. (Suivez les instructions
+    pr‚cis‚es dans la documentation relative aux programmes r‚sidant en
+     m‚moire, ou supprimez le nom du fichier de vos fichiers
+     AUTOEXEC.BAT/CONFIG.SYS et r‚amorcez votre ordinateur).
+
+4.  Relancez … nouveau le programme d'installation de Windows 3.1.
+
+5.  AprŠs avoir r‚ussi … installer Windows, vous pourrez, si vous le souhaitez,
+    restaurer les programmes r‚sidant en m‚moire.
+
+Les programmes que nous avons test‚s figurent dans la liste ci-dessous. Nous 
+avons d‚couvert des problŠmes d'interaction entre Windows 3.1 et chacun de 
+ces programmes pour lesquels une des conditions suivantes existe :
+
+     *  L'interaction de deux programmes r‚sultent d'une r‚ponse inattendue du
+         systŠme qui peut provoquer toutes sortes de problŠmes, d'un arrˆt du
+         systŠme … un affichage incorrect.
+
+     *  Des mesures sp‚ciales doivent ˆtre prises pour faciliter l'ex‚cution
+          parallŠle de ces programmes.
+
+Install ne d‚tecte pas tous les programmes r‚sidant en m‚moire figurant dans la 
+liste. 
+Les informations donn‚es ici concernent un grand nombre de programmes 
+r‚sidant en m‚moire. Certains seront d‚tect‚s, d'autres ne le seront pas. Pour 
+que le programme Install d‚tecte un programme r‚sidant en m‚moire, il faut 
+que certains critŠres soient satisfaits. Vous trouverez dans le fichier 
+SETUP.INF les listes des programmes r‚sidant en m‚moire que le programme 
+Install peut d‚tecter. Ces listes sont nomm‚es ®incomptsr1¯ et ®incomptsr2¯.
+
+
+*REMARQUE :  La liste suivante ne couvre pas tous les problŠmes qui risquent de se pr‚senter lors de 
+l'utilisation de la version 3.1 de Windows avec l'un de ces programmes. Elle repr‚sente une vue 
+d'ensemble des r‚sultats des tests que nous avons effectu‚s.
+
+LISTE DES PROGRAMMES
+====================
+
+386MAX
+------
+La documentation accompagnant 386MAX recommande de ne jamais d‚finir 
+le paramŠtre EXT … moins de 64. Si vous ne respectez pas ces consignes  et 
+que vous d‚finissez ce paramŠtre … 0, le programme Windows Install et 
+Windows ex‚cut‚s en mode standard se bloqueront.
+
+AprŠs avoir install‚ Windows, lisez le fichier LISEZMOI.WRI pour pluss 
+d'informations sur l'ex‚cution de 386MAX avec la version 3.1 de Windows.
+
+UTILITAIRE 386MAX CACHE (QCACHE.EXE)
+------------------------------------
+Cet utilitaire de cache ne doit pas ˆtre utilis‚ en mˆme temps que Smartdrive. 
+Il n'y a aucun avantage … ex‚cuter ces deux utilitaires en mˆme temps. Nous 
+vous recommandons d'utiliser Smartdrive (automatiquement install‚ avec 
+Windows 3.1) plut“t que 386MAX.
+
+ALL CHARGE 386, version. 3.1 
+----------------------------
+ALLEMM4.SYS est un gestionnaire de m‚moire qui, s'il est en cours 
+d'utilisation sur votre systŠme, risque de vous empˆcher de terminer 
+l'installation de Windows ou de lancer Windows en mode standard ou ‚tendu. 
+Si vous avez des difficult‚s … ex‚cuter ce programme avec la version 3.1 de 
+Windows, nous vous recommandons d'utiliser les utilitaires EMM386.EXE et 
+HIMEM.SYS pour g‚rer la m‚moire avec Windows 3.1. Ces deux utilitaires 
+sont inclus avec la version 3.1 de Windows.
+
+ANARKEY, version 4.00
+---------------------
+Il est possible qu'avec certaines configurations de m‚moire, la version 4.00 
+d'Anarkey utilis‚e avec Windows 3.1 en mode ‚tendu bloque le systŠme de 
+maniŠre impr‚visible, et peut mˆme dans de trŠs rares circonstances corrompre 
+les donn‚es du disque dur. Nous vous recommandons de ne pas ex‚cuter 
+Windows 3.1 alors qu'Anarkey, version 4.00 est charg‚. Cette version 4.00 
+risque aussi, dans certains cas, d'empˆcher le chargement de Windows. Ce type 
+de problŠme semble ne plus exister avec la version 4.01. Contactez Moderne 
+Software pour recevoir gratuitement la mise … niveau d'Anarkey 4.01.
+
+ANARKEY, version 4.01
+---------------------
+En mode standard, si Anarkey est charg‚ avant de lancer Windows, il n'est 
+disponible … aucune zone VM/MS-DOS que vous lancez pendant votre session 
+Windows. En mode ‚tendu, si Anarkey est charg‚ dans la m‚moire haute avant 
+que vous ne lanciez Windows, il se peut que le systŠme se bloque si vous 
+essayez d'ouvrir une application. C'est pourquoi, en mode standard, nous vous 
+recommandons de charger Anarkey s'il le faut … partir de chaque zone 
+VM/MS-DOS. En mode ‚tendu, nous vous recommandons de ne pas charger 
+Anarkey dans la m‚moire haute.
+
+APPEND (MS-DOS)
+---------------
+L'utilitaire APPEND interfŠre avec la capacit‚ de Windows et des applications 
+Windows … construire des noms WFP (Well Formed Path) valides pour les 
+fichiers auxquels vous voulez acc‚der. (WFP est le nom complet d'un fichier, y 
+compris la lettre du lecteur et du chemin d'accŠs complet … partir du r‚pertoire 
+racine de ce lecteur). Nous vous recommandons de ne pas utiliser l'utilitaire 
+APPEND avec la version 3.1 de Windows.
+
+ASP INTEGRITY TOOLKIT, version 3.7
+----------------------------------
+(Porgramme de protection contre virus). Lorsque ce produit est ex‚cut‚ 
+conjointement avec la version 3.1 de Windows Install, plusieurs problŠmes se 
+produiront, allant du blocage/r‚amor‡age du systŠme … l'impossibilit‚ d'utiliser 
+le clavier avec Windows. Nous vous recommandons de suivre les instructions 
+accompagnant le produit pour d‚sactiver la protection avant d'installer la 
+version 3.1 de Windows. L'installation de Windows est consid‚r‚e comme 
+faisant partie de ®l'administration du systŠme¯ et la documentation vous donne 
+des instructions pour d‚sactiver la protection lorsque vous effectuez des tƒches 
+relevant de l'administration du systŠme.
+
+AUTOCON, version 2.0e 
+---------------------
+AUTOCON vous permet, au moment de l'armor‡age de s‚lectionner d'une 
+jusqu'… cinquante configurations. Pour cela, il modifie les fichiers 
+CONFIG.SYS et AUTOEXEC.BAT des fiches de sa base de donn‚es, 
+AUTOCON.DAT lorsque le r‚amor‡age est fait … partir de AUTOCON. Notez 
+que le programme d'installation de Windows 3.1 ne modifie que la premiŠre 
+section des deux fichiers de configuration. Vous devez ex‚cuter AUTOCON 
+aprŠs Install et modifier manuellement les configurations dans la base de 
+donn‚es qui seront utilis‚es avec la version 3.1 de Windows, puis r‚amorcer … 
+partir de AUTOCON. Consultez la documentation accompagnant AUTOCON.
+
+BOOTCON, version 1.60
+---------------------
+BOOTCON vous permet de s‚lectionner une certaine configuration au moment 
+de l'amor‡age. En utilisant un menu dans CONFIG.SYS, BOOTCON.SYS se
+branchera alors dans les sections appropri‚es de vos fichiers CONFIG.SYS et 
+AUTOEXEC.BAT. Notez que la version 3.1 de Windows Install ne modifie 
+que la premiŠre section des fichiers CONFIG.SYS et AUTOEXEC.BAT. Vous 
+devrez modifier manuellement aprŠs l'installation  les configurations qui seront 
+utilis‚es avec la version 3.1 de Windows. Consultez la documentation 
+accompagnant BOOTCON.
+
+BOOT.SYS
+--------
+BOOT.SYS est un PC power user's tool qui permet d'amorcer facilement
+plusieurs configurations. Il permet … l'utilisateur de cr‚er un menu dans le 
+fichier CONFIG.SYS qui se branchera alors dans la section du fichier qui
+contient les informations de configuration et les gestionnaires. Notez que la 
+version 3.1 de Windows Install ne modifie que la premiŠre section des fichiers 
+CONFIG.SYS et AUTOEXEC.BAT. Vous devrez effectuer manuellement les 
+modifications pour les autres sections de vos fichiers CONFIG.SYS et 
+AUTOEXEC.BAT si vous voulez utiliser la version 3.1 de Windows avec ces 
+configurations.
+
+UTILITAIRE CACHE.EXE
+--------------------
+Vous ne devez pas utiliser deux utilitaires de cache avec la version 3.1 de 
+Windows. Nous vous recommandons d'utiliser SMARTDRV avec la version 
+3.1 de Windows et de supprimer les autres utilitaires de cache. *Si Install 
+trouve cet utilitaire de cache, il le supprimera du fichier CONFIG.SYS. Si vous 
+chargez un cache par son nom … partir du fichier AUTOEXE.BAT, il vous 
+faudra retenir UN SEUL cache et supprimer l'autre. 
+
+UTILITAIRE .SYS DISK CACHE
+--------------------------
+Cet utilitaire de cache ne fonctionne pas correctement avec Windows lorsque 
+vous utilisez SMARTDRV. Nous vous recommandons d'utiliser SMARTDRV 
+avec la version 3.1 de Windows et de supprimer l'autre utilitaire de cache. *Si 
+Install trouve cet utilitaire de cache, il le supprimera du fichier CONFIG.SYS.
+
+CED , version 1.0e
+------------------
+CED est un ‚diteur de ligne de commande. Si vous utilisez CED avec 
+Windows 3.1, il se peut que vous obteniez des r‚sultats impr‚visibles, y 
+compris un blocage du systŠme. Nous vous d‚conseillons d'utiliser CED avec 
+la version 3.1 de Windows.
+
+CENTRAL POINT ANTI-VIRUS 1.1 (VSAFE.COM/VSAFE.SYS)
+--------------------------------------------------
+VSAFE.COM/VSAFE.SYS ne doit pas ˆtre en cours d'utilisation lors de 
+l'installation de la version 3.1 de Windows. Le processus d'installation de 
+Windows 3.1 risque de ne pas fonctionner si ce programme r‚sidant en 
+m‚moire est charg‚. Vous pourrez recharger VSAFE lorsque vous aurez r‚ussi 
+… installer Windows 3.1. D'aprŠs Central Point, puisque Windows utilise le 
+disque pour l'‚change de m‚moire, l'option de protection contre l'‚criture de 
+VSAFE doit ˆtre DESACTIVEE lorsque vous ex‚cutez Windows. Pour savoir 
+comment proc‚der, consultez la documentation qui accompagne Central Point 
+Anti-Virus.
+
+CMDEDIT.COM, version 2.0 (Date 6-12-91)
+---------------------------------------
+Cet ‚diteur de ligne de commande ne se comporte pas de maniŠre uniforme 
+lorsqu'il est utilis‚ avec Windows 3.1. Si vous ex‚cutez des VM multiples en
+mode ‚tendu et que ce programme r‚sidant en m‚moire est charg‚ avant que 
+vous ne lanciez Windows, il se peut que vous receviez le message General
+Protection Fault. En mode standard, si ce TSR est charg‚ avant que vous ne 
+lanciez Windows, il ne pourra se charger ni dans une zone MS-DOS, ni dans 
+VM.
+
+CUBIT, version. 3.01
+--------------------
+Selon Soft Logic Solutions, ce produit n'est pas compatible avec Windows. 
+CUBITR.EXE en lui-mˆme ne semble pas affecter Windows. Toutefois, si 
+vous ex‚cutez Windows 3.1 avec des fichiers compress‚s par CUBIT.EXE, des 
+r‚sultats impr‚visibles se produisent et le systŠme risque de se bloquer. Nous 
+vous d‚conseillons d'utiliser ce produit avec la version 3.1 de Windows.
+
+DATA PHYSICIAN PLUS, version 2.0 (VirALERT)
+-------------------------------------------
+L'ex‚cution du programme d'installation de Windows 3.1 est d‚conseill‚e si 
+Viralert est charg‚.  Pendant le processus d'installation, si Viralert est charg‚, il 
+affichera un message d'alerte … intervalles r‚guliers de quelques secondes et 
+prolongera inutilement le temps n‚cessaire … l'installation. D'aprŠs les auteurs 
+du produit, il est recommand‚ de ®d‚charger¯ Viralert  avant d'installer 
+Windows 3.1, puis de le recharger une fois que l'installation est termin‚e. Le 
+fait d'appuyer sur <ALT><V> fait apparaŒtre le menu VirALERT. Vous 
+pouvez activer ou d‚sactiver VirALERT en choisissant des options dans ce 
+menu.
+
+EDITEUR DE LIGNE DE COMMANDE DOSCUE.COM
+---------------------------------------
+L'‚diteur de ligne de commande DOSCUE produit des r‚sultats qui ne sont pas 
+fiables lorsqu'il est utilis‚ avec la version 3.1 de Windows. Nous vous 
+recommandons de ne pas utiliser ce programme avec Windows 3.1.
+
+DOUBLEDISK, version 2.5
+-----------------------
+Windows 3.1 risque d'essayer et d'acc‚der … des lecteurs de disque ®fant“mes¯ 
+si vous utilisez ce produit avec Windows 3.1. Les lecteurs fant“mes existent 
+lorsque vous utilisez Doubledisk pour cr‚er une lettre de ®lecteur compress‚¯. 
+Vous pourriez par exemple, avoir les lecteurs A, B et C sur votre ordinateur et 
+utiliser Doubledisk pour cr‚er un lecteur F. Windows 3.1 (et MS-DOS) 
+penseront alors que vous avez les lecteurs A, B, C. D, et F. Vertisoft (fabricant 
+de Doubledisk) a cr‚‚ l'utilitaire DRVOFF pour que ces lecteurs fant“mes 
+soient invisibles … Windows 3.1. Si vous avez besoin de cet utilitaire, contactez 
+Vertisoft pour vous le procurer.
+
+FASTOPEN (MS-DOS)
+-----------------
+Fastopen est un utilitaire r‚sidant dans la m‚moire vive (RAM). Des problŠmes 
+impliquant des tables d'allocation de fichiers (FAT) peuvent se produire 
+lorsque vous utilisez Fastopen avec un utilitaire de d‚fragmentation de disque. 
+Il se peut que si la m‚moire est insuffisante, vous devrez supprimer Fastopen 
+pour pouvoir charger et ex‚cuter correctement Windows 3.1.
+
+UTILITAIRE FLASH DISK (FLASH.EXE)
+---------------------------------
+Cet utilitaire de cache ne doit pas ˆtre utilis‚ simultan‚ment avec Smartdrive. 
+Il n'y a aucun avantage … ex‚cuter ces deux utilitaires en mˆme temps. Nous 
+vous recommandons d'utiliser Smartdrive (automatiquement install‚ avec 
+Windows 3.1) plut“t que l'utilitaire Flash disk.
+
+GRAPHICS (MS-DOS)
+-----------------
+Si MS-DOS GRAPHICS est charg‚ dans des zones multiples VM/MS-DOS … 
+l'int‚rieur de Windows 3.1, l'impression … partir de ces zones VM/MS-DOS 
+risque d'ˆtre impr‚visible. La zone VM/MS-DOS s‚lectionn‚e enverra sa sortie 
+… l'imprimante. C'est pourquoi le fait d'alterner d'une zone MS-DOS … une 
+autre provoque un m‚lange dans l'impression. 
+
+HPEMM386.SYS
+HPEMM486.SYS
+------------
+Ces gestionnaires de m‚moire pagin‚e ne sont pas compatibles avec Windows 
+ex‚cut‚ en mode ‚tendu. Nous vous recommandons de les remplacer par 
+emm386.exe (fourni avec la version 3.1 de Windows) si vous avez l'intention 
+d'ex‚cuter Windows en mode ‚tendu.
+
+GESTIONNAIRE DE MEMOIRE HPMM.SYS - HP
+-------------------------------------
+Vous ne pouvez pas ex‚cuter Windows en mode standard lorsque HPMM.SYS 
+est charg‚ et vous ne pourrez pas terminer le processus d'installation de 
+Windows 3.1 (car le programme d'installation de Windows s'ex‚cute en mode 
+standard). Nous vous conseillons de retirer HPMM.SYS avant d'installer 
+Windows. HP nous a signal‚ qu'il ‚tait possible de r‚installer HPMM.SYS et 
+d'utiliser ce gestionnaire de m‚moire avec Windows 3.1 … condition que vous 
+l'ex‚cutiez en mode ‚tendu
+
+UTILITAIRE DE CACHE HYPERDISK DISK (HYPER386.EXE)
+-------------------------------------------------
+Cet utilitaire de cache ne doit pas ˆtre utilis‚ simultan‚ment avec Smartdrive. 
+Il n'y a aucun avantage … ex‚cuter ces deux utilitaires en mˆme temps. Nous 
+vous recommandons d'utiliser Smartdrive (automatiquement install‚ avec 
+Windows 3.1) plut“t que l'utilitaire Hyperdisk.
+
+IBM VDISK.SYS (UTILITAIRE DE DISQUE RAM)
+----------------------------------------
+VDISK.SYS n'est pas compatible avec Windows, il prend de la m‚moire 
+‚tendue n‚cessaire pour ex‚cuter Windows. Cet utilitaire empˆchera tout 
+gestionnaire de m‚moire XMS compatible d'ˆtre charg‚.
+
+GESTIONNAIRE DE MEMOIRE IEMM.SYS
+--------------------------------
+Le gestionnaire de m‚moire IEMM.SYS n'est pas compatible avec Windows. 
+Nous vous recommandons de retirer IEMM.SYS et d'utiliser EMM386.exe 
+(fourni avec Windows 3.1).
+
+UTILITAIRE DE CACHE ICACHE.SYS
+------------------------------
+Cet utilitaire de cache ne fonctionne pas correctement avec Windows lorsque 
+vous utilisez SMARTDRV. Nous vous recommandons d'utiliser SMARTDRV 
+avec la version 3.1 de Windows et de supprimer tout autre utilitaire de cache. 
+*Si Install trouve cet utilitaire de cache, il le supprimera du fichier 
+CONFIG.SYS.
+
+UTILITAIRE DE CACHE IBMCACHE.SYS
+--------------------------------
+Cet utilitaire de cache ne fonctionne pas correctement avec Windows lorsque 
+vous utilisez SMARTDRV. Nous vous recommandons d'utiliser SMARTDRV 
+avec la version 3.1 de Windows et de supprimer tout autre utilitaire de cache. 
+*Si Install trouve cet utilitaire de cache, il le supprimera du fichier 
+CONFIG.SYS.
+
+EMULATEUR DE MEMOIRE PAGINEE INTEL (ILIM386.SYS)
+------------------------------------------------
+ILIM386.SYS a ‚t‚ livr‚ avec le produit Inboard/386 d'Intel. Cet ‚mulateur de 
+m‚moire pagin‚e n'est pas compatible avec Windows 3.1. Nous vous 
+recommandons de le supprimer de votre configuration avant d'installer et 
+d'ex‚cuter Windows 3.1.
+
+JOIN (MS-DOS)
+-------------
+La commande MS-DOS JOIN fonctionne correctement avec Windows 3.1 … 
+condition que vous ne changiez pas l'‚tat des lecteurs "joints" PENDANT une 
+session de Windows 3.1. Si vous utilisez la commande JOIN avant de lancer 
+Windows 3.1, NE CHANGEZ PAS l'‚tat des lecteurs joints … partir de la zone 
+VM/MS-DOS dans Windows et n'ajoutez ni ne supprimez de lecteurs joints 
+lors d'une session Windows et … partir de Windows. Nous vous 
+DECONSEILLONS d'utiliser JOIN sur un systŠme sur lequel vous ex‚cutez 
+Windows Install ou Windows 3.1.
+
+KEYB.COM (MS-DOS)
+-----------------
+Il est recommand‚ de charger KEYB.COM avec tout paramŠtre ou 
+commutateur AVANT de lancer Windows. AprŠs l'avoir charg‚, vous pouvez … 
+n'importe quel moment changer la configuration du clavier … partir d'une 
+session DOS/VM. Si la commande KEYB.COM n'est pas charg‚e avec tout 
+paramŠtre ou commutateur avant de lancer Windows. elle risque de ne pas 
+fonctionner et peut ˆtre la cause de problŠmes si elle est ex‚cut‚e dans une 
+zone VM/MS-DOS. Vous pouvez toutefois utiliser la commande KEYB sans 
+aucun paramŠtre ou commutateur … N'IMPORTE QUEL moment pour afficher 
+les informations de pages de code.
+
+LANSIGHT, version 2.0
+---------------------
+Lansight est un utilitaire qui vous permet de contr“ler et de surveiller les autres 
+stations de travail reli‚es … un r‚seau Novell. Ce programme exige que les TSR 
+(programmes r‚sidant en m‚moire) lansel, user & lsallow soient charg‚s sur la 
+station de travail. AprŠs le chargement de ces TSR, Windows 3.1 est charg‚. 
+Un message est envoy‚ de la station de travail du superviseur … la station de 
+travail qui ex‚cute Windows 3.1, lui demandant la permission de visualiser son 
+‚cran. Au lieu que le message s'affiche instantan‚ment sur l'‚cran de la station 
+de travail ex‚cutant Windows 3.1, le systŠme se bloque et doit ˆtre r‚amorc‚ 
+(en ex‚cutant Netware 386.).
+
+LANTASTIC TSR (KBFLOW)
+----------------------
+Vous ne devez pas charger KBFLOW TSR avant de lancer Windows 3.1. Pour 
+utiliser KBFLOW, vous devez lancer Windows 3.1 et ex‚cuter ce programme 
+r‚sidant en m‚moire … partir d'une zone MS-DOS.
+
+LASERTOOLS CONTROL PANEL, version 2.2
+-------------------------------------
+Si vous utilisez ce TSR (programme r‚sidant en m‚moire) (pcpanel.exe) avec 
+Windows 3.1, le systŠme risque de se bloquer en mode standard et en mode 
+‚tendu. Ceci se produit lorsque le TSR a ‚t‚ charg‚ … partir de Windows 3.1. Il 
+semble fonctionner correctement si vous le chargez avant de charger Windows 
+3.1. Si vous utilisez ce produit, nous vous recommandons de le charger avant 
+Windows 3.1.
+
+LE MENU,  version. 1.0
+----------------------
+Les informations relatives … l'environnement, telles que PATH, PROMPT et 
+WINDIR sont perdues lorsqu'une ZONE VM/MS-DOS est ouverte. Si vous 
+comptez lancer Windows 3.1 … partir du menu Le Menu, nous vous 
+recommandons d'installer Windows 3.1 dans un fichier de traitement par lots 
+que vous pourrez ouvrir … partir d'un menu, de maniŠre … ce que 
+COMMAND.COM puisse ˆtre charg‚ avant Windows 3.1 (Consultez la 
+documentation accompagnant Le Menu).
+
+LOCKIT, version 3.3 (PC VAULT, SECURE IT)
+-----------------------------------------
+Ces programmes enlŠvent les espaces de la ligne load= dans le fichier 
+WIN.INI. La version 3.3+ semble avoir corrig‚ ce problŠme.
+
+LOGICIEL SOURIS LOGITECH, Versions. 5.0/6.0 (CLICK, LOGIMENU)
+-------------------------------------------------------------
+Si vous voulez utiliser CLICK et LOGIMENU … partir d'une zone VM/MS-
+DOS dans Windows 3.1, vous devez charger les programmes r‚sidant en 
+m‚moire … partir de la zone VM/MS-DOS. Ceci est vrai mˆme si les TSR 
+(programmes r‚sidant en m‚moire) ont ‚t‚ charg‚ avant que vous ne lanciez 
+Windows 3.1. Vous devrez recharger ces TSR aprŠs avoir quitt‚ Windows 3.1 
+pour qu'ils puissent fonctionner … partir du message d'attente MS-DOS. Ceci 
+est vrai ‚galement mˆme si vous avez charg‚ ces TSR … partir du message 
+d'attente VM/MS-DOS dans Windows 3.1.
+
+UTILITAIRE DE CACHE MACE DISK (MCACHE.SYS)
+------------------------------------------
+Cet utilitaire de cache ne fonctionne pas correctement avec Windows lorsque 
+vous utilisez SMARTDRV. Nous vous recommandons d'utiliser SMARTDRV 
+(automatiquement install‚ avec la version 3.1 de Windows) au lieu de 
+l'utilitaire de cache Mace disk. *Si Install trouve cet utilitaire de cache, il le 
+supprimera du fichier CONFIG.SYS.
+
+MIRROR (MS-DOS)
+---------------
+Si MS-DOS - MIRROR est charg‚ … partir de Windows 3.1 au moyen de la 
+commande FICHIER EXECUTER en mode standard, elle ne peut pas ˆtre 
+supprim‚e de la m‚moire au moyen de la commande
+®mirror /u¯. Vous recevrez un message d'erreur si vous essayez de la 
+supprimer de cette maniŠre.
+
+NDOSEDIT.COM (Date 1-1-84)
+--------------------------
+Cet ‚diteur de ligne de commande ne se comporte pas de maniŠre uniforme 
+lorsqu'il est utilis‚ avec Windows 3.1. Vous risquez d'avoir des difficult‚ … 
+charger ce programme r‚sidant en m‚moire.
+
+GESTIONNAIRE DE MEMOIRE NETROOM, version 2.1 (RM386.SYS)
+--------------------------------------------------------
+Si vous utilisez NetRoom 2.1 avec Windows 3.1, il se peut que vous ayez … 
+r‚amorcer le systŠme pendant l'installation ou lorsque vous lancez Windows 
+3.1 en mode standard, et vous risquez de ne pas pouvoir le lancer en mode 
+‚tendu. Si vous avez des difficult‚s … utiliser  NetRoom 2.1 avec Windows, 
+nous vous recommandons de supprimer les fichiers appropri‚s de vos fichiers 
+CONFIG.SYS et AUTOEXE.BAT. AprŠs avoir supprim‚ ces fichiers, 
+r‚amorcez votre ordinateur avant d'essayer d'installer … nouveau Windows 3.1.
+
+NEWSPACE, version 1.07
+----------------------
+Cet utilitaire de compression de disque n'est pas compatible avec la version 3.1 
+de Windows. Si vous l'utilisez avec Windows 3.1, vous serez confront‚ … de 
+nombreux problŠmes.
+
+NORTON ANTI-VIRUS, version 1.0
+------------------------------
+Si ce programme est charg‚ avant que vous ne lanciez Windows Install 3.1, le 
+programme d'installation risque de se bloquer. Il semble que le problŠme 
+n'existe plus dans la version 1.5 de Norton Anti-Virus.
+
+NORTON UTILITIES, version 5.0 (DISKREET, NCACHE)
+------------------------------------------------
+Ce produit signale clairement qu'il n'est pas compatible avec la version 3.1 de 
+Windows. Si vous utilisez ces utilitaires avec Windows 3.1, il se peut que le 
+systŠme se bloque. Pour corriger ce problŠme, Symantec Corporation suggŠre 
+la mise … niveau … la version la plus r‚cente de Norton Utilities.
+
+NORTON UTILITIES, version 6.01 NCACHE
+-------------------------------------
+Certaines versions de NCACHE peuvent empˆcher l'ex‚cution ou le lancement 
+de Windows 3.1. Le systŠme risque de se bloquer en mode standard. Ceci se 
+produira le plus probablement si NCACHE a ‚t‚ install‚ comme cache EMS, 
+chose … ne pas faire. Vous pouvez essayer de rem‚dier au problŠme en 
+installant NCACHE comme cache XMS. Nous avons relev‚ d'autres problŠmes 
+lorsque cet utilitaire de cache est utilis‚ avec Windows. Pour obtenir les 
+meilleurs r‚sultats, plut“t que d'utiliser NCACHE, nous vous conseillons 
+d'utiliser Smartdrive fourni avec la version 3.1 de Windows. 
+Contactez Symantec Corporation pour obtenir une mise … jour de l'utilitaire 
+NCACHE.
+
+NORTON UTILITIES, version 6.01 DISKMON
+--------------------------------------
+Moniteur de disque. Si ce programme est en cours d'utilisation lorsque vous 
+ex‚cutez Windows 3.1, il se peut que vous n'obteniez pas de r‚sultats 
+uniformes si vous essayez d'acc‚der … des fichiers qui se trouvent dans un 
+r‚pertoire que DISKMON contr“le. Vous pourrez quelquefois acc‚der … ces 
+fichiers, alors que d'autres fois vous ne le pourrez pas. Si dans le Gestionnaire 
+de fichiers vous essayez de cliquer sur un r‚pertoire que DISKMON contr“le, 
+un bip sonore incessant peut se produire. Nous vous d‚conseillons d'utiliser ce 
+programme r‚sidant en m‚moire avec la version 3.1 de Windows.
+
+PCED, version 2.00
+------------------
+PCED est un ‚diteur de ligne de commande MS-DOS. Nous vous 
+recommandons de ne pas charger le programme CED.EXE dans la m‚moire 
+haute. Si vous chargez ce programme dans la m‚moire haute et si vous 
+ex‚cutez Windows en mode ‚tendu, il peut se produire des r‚sultats 
+impr‚visibles, tels qu'un blocage du systŠme. Si vous chargez le programme 
+r‚sidant en m‚moire avant de lancer Windows, il ne sera peut ˆtre pas 
+disponible en mode standard.
+
+ACCELERATEUR DE DISQUE PC-KWIK
+------------------------------
+Si vous utilisez PC-Kwik avec Windows ex‚cut‚ en mode 386 ‚tendu, assurez-
+vous que vous utilisez la version 3.55 ou plus r‚cente du produit et que vous 
+utilisez PC-Kwik dans la m‚moire ‚tendue et non dans la m‚moire pagin‚e.
+Si vous avez besoin de mettre votre version de PC-Kwik … niveau, contactez 
+MultiSoft.
+
+UTILITAIRE DE CACHE PC-KWIK (PC-KWIK.EXE)
+-----------------------------------------
+Cet utilitaire de cache ne doit pas ˆtre utilis‚ simultan‚ment avec Smartdrive. 
+Il n'y a aucun avantage … ex‚cuter ces deux utilitaires en mˆme temps. Nous 
+vous recommandons d'utiliser Smartdrive (automatiquement install‚ avec 
+Windows 3.1) plut“t que l'utilitaire PC-Kwik.
+
+
+PC-KWIK, version 1.59 (PCK.EXE, PSKSCRN.EXE, PCKEY.COM)
+-------------------------------------------------------
+Le programme d'installation risque de se bloquer si la version 1.59 du logiciel 
+PC-KWIK est install‚e. Le problŠme semble avoir ‚t‚ r‚solu avec la version 
+2.0 de PC-KWIK.
+
+UTILITAIRE PCSXMAEM.SYS
+-----------------------
+Cet utilitaire est incompatible avec Windows. Vous devez le supprimer de 
+votre configuration avant d'essayer d'installer ou d'ex‚cuter Windows 3.1. 
+PCSXMAEM.SYS est presque identique … XMAEM.SYS. C'est une version 
+qui a chang‚ de nom, qui a subi de l‚gŠres modifications et qui est livr‚e avec 
+l'‚mulateur IBM PC/3270. Elle est encore livr‚e avec les versions actuelles.
+
+PCSX2EMS.SYS
+------------
+PCSX2EMS.SYS fonctionne lorsque XMA est pr‚sent pour fournir le support 
+de l'EMS API. Windows ne pourra ˆtre ex‚cut‚ que s'il est charg‚ sur une 
+machine avec une carte XMA. Il est livr‚ avec l'‚mulateur 
+IBM PC/3270.
+
+PCTOOLS DELUXE TSR, version 7.1 (DATAMON)
+-----------------------------------------
+Si vous utilisez DATAMON TSR de PCTools avec la syntaxe suivante
+      DATAMON \SENTRY+
+des problŠmes risquent de se produire pendant l'installation de Windows 3.1 si 
+l'espace disque commence … ˆtre insuffisant. L'installation risque de s'arrˆter 
+pr‚matur‚ment et votre systŠme peut se retrouver avec un espace disque 
+EXTREMEMENT r‚duit. Nous RECOMMANDONS que DATAMON ne soit 
+pas charg‚ avec le paramŠtre \SENTRY+ parameter pendant l'installation. 
+Consultez la documentation de PCTools pour obtenir des informations sur la 
+maniŠre de d‚charger DATAMON. L'option \SENTRY+ est la cause du 
+problŠme pendant l'installation et non le TSR DATAMON lui-mˆme. NE 
+CHARGEZ PAS ce programme r‚sidant en m‚moire aprŠs SMARTDrive, 
+sinon il peut se produire un blocage du systŠme.
+
+PCTOOLS DELUXE TSR, version 6.0 (DESKTOP)
+-----------------------------------------
+Si vous essayez de lancer PC Tools … partir de VM en mode standrad, 
+l'ordinateur risque de se bloquer, il est possible qu'il puisse ˆtre r‚amorc‚ en 
+mode standard. Si vous essayez d'utiliser la VM pour lancer n'importe quelle 
+commande MS-DOS, la mˆme chose se produit. La version 7.00 de PCTools 
+semble avoir corrig‚ ces problŠmes, toutefois, nous vous d‚conseillons 
+d'ex‚cuter DESKTOP … partir d'une zone VM/MS-DOS, mˆme dans la version 
+7.00, si vous l'avez charg‚ avant de charger Windows 3.1. Si vous rechargez 
+Desktop … partir d'une zone VM/MS-DOS, alors qu'il a d‚j… ‚t‚ charg‚, il se 
+peut que votre systŠme se bloque lorsque vous quitterez Windows 3.1. Nous 
+vous recommandons d'ex‚cuter DESKTOP … partir d'un fichier PIF. Windows 
+3.1 contient un fichier PIF pour DESKTOP.
+
+PCTOOLS DELUXE TSR, version 7.1 (VDEFEND)
+-----------------------------------------
+VDEFEND ne doit pas ˆtre en cours d'utilisation lorsque vous installez 
+Windows 3.1. Le processus d'installation risque de ne pas fonctionner 
+correctement si ce programme r‚sidant en m‚moire est charg‚. AprŠs avoir 
+r‚ussi … installer Windows 3.1, vous pourrez recharger VDEFEND.
+
+UTILITAIRE DE CACHE PCTOOLS (PC-CACHE.COM)
+------------------------------------------
+Cet utilitaire de cache ne doit pas ˆtre utilis‚ simultan‚ment avec Smartdrive. 
+Il n'y a aucun avantage … ex‚cuter ces deux utilitaires en mˆme temps. Nous 
+vous recommandons d'utiliser Smartdrive (automatiquement install‚ avec 
+Windows 3.1) plut“t que l'utilitaire de cache de PCTools.
+
+PRINT (MS-DOS)
+--------------
+Si vous imprimez un nombre important de longs documents sur l'imprimante 
+d'un r‚seau et que vous essayez de lancer Windows Install 3.1 par-dessus le 
+r‚seau, le systŠme risque de se bloquer lorsque des groupes sont ‚labor‚s 
+pendant l'installation.
+
+PRINTER ASSIST 4.20
+-------------------
+Printer Assist est un programme r‚sidant en m‚moire qui vous permet de 
+partager l'imprimante de la station de travail avec d'autres stations sur r‚seau 
+Netware 286 et 386. Certaines applications Windows, telles que Word pour 
+Windows, impriment un m‚lange de caractŠres corrects et illisibles (caractŠres 
+‚tendus) m‚lang‚s lorsque ce TSR est en cours d'utilisation.
+
+PYRO! , version 1.0
+-------------------
+Si cet ‚conomiseur d'‚cran est charg‚ avant que Windows 3.1 ne soit lanc‚, 
+l'‚cran sera effac‚ lorsque l'intervalle de temps appropri‚ sera d‚pass‚. Vous 
+ne pourrez plus … ce moment l… restaurer l'‚cran de Windows 3.1.
+
+CARTES RAMTYPE.SYS - AST RAMPAGE
+--------------------------------
+Le gestionnaire RAMTYPE.SYS n'est pas compatible avec Windows. Nous 
+vous recommandons de supprimer ce gestionnaire avant d'installer Windows 
+3.1. Si vous chargez le gestionnaire … partir de votre fichier CONFIG.SYS et 
+excluez la ligne de commande pour le gestionnaire comme suit : 
+
+   rem RAMTYPE.SYS 
+
+Windows 3.1 s'ex‚cutera correctement sans RAMTYPE.SYS. Toutefois,
+d'autres gestionnaires qui fonctionnent avec RAMTYPE.SYS ne se chargeront 
+pas et les applications ne pourront pas utiliser la m‚moire pagin‚e sur votre 
+systŠme. 
+
+AprŠs avoir install‚ Windows, vous pourrez utiliser la version 1.2 ou plus 
+r‚cente de RAMTYPE.SYS lors de l'ex‚cution de Windows. Si vous utilisez 
+une version plus r‚cente sur un IBM PS/2 ou un MCA (micro-channel 
+architecture computer) et que votre carte Rampage est configur‚e pour la 
+m‚moire ‚tendue et pagin‚e, vous devrez mettre votre gestionnaire AST 
+RAMTYPE.SYS … niveau aprŠs avoir install‚ Windows. Vous devrez aussi 
+supprimer la commande ®rem¯ de votre fichier CONFIG.SYS pour que 
+RAMTYPE.SYS puisse ˆtre charg‚ correctement.
+
+UTILITAIRE DE CACHE SECRETDISK II (FAST512.SYS)
+-----------------------------------------------
+Cet utilitaire de cache ne doit pas ˆtre utilis‚ simultan‚ment avec Smartdrive. 
+Il n'y a aucun avantage … ex‚cuter ces deux utilitaires en mˆme temps. Nous 
+vous recommandons d'utiliser Smartdrive (automatiquement install‚ avec 
+Windows 3.1) plut“t que l'utilitaire de cache de SecretDisk II. *Si Install 
+trouve cet utilitaire de cache, il le supprimera du fichier CONFIG.SYS.
+
+SIDEKICK, version 1.0
+---------------------
+Des problŠmes de toutes sortes se produisent lorsque vous ex‚cutez Sidekick 
+comme TSR conjointement avec Windows 3.1. Nous vous recommandons 
+d'ex‚cuter Sidekick comme application MS-DOS en utilisant un fichier PIF 
+plut“t que de le charger comme programme r‚sidant en m‚moire.
+
+SIDEKICK, version 2.0
+---------------------
+Des problŠmes de toutes sortes se produisent lorsque vous ex‚cutez Sidekick 
+comme TSR conjointement avec Windows 3.1. Nous vous recommandons 
+d'ex‚cuter Sidekick comme application MS-DOS en utilisant un fichier PIF 
+plut“t que de le charger comme programme r‚sidant en m‚moire.
+
+SIDEKICK PLUS
+-------------
+Des problŠmes de toutes sortes se produisent lorsque vous ex‚cutez Sidekick 
+comme TSR conjointement avec Windows 3.1. Nous vous recommandons 
+d'ex‚cuter Sidekick comme application MS-DOS en utilisant un fichier PIF 
+plut“t que de le charger comme programme r‚sidant en m‚moire.
+
+DEBOGUEUR SOFTICE
+-----------------
+Si SoftIce est charg‚, le programme d'installation de Windows 3.1 se bloque 
+lorsqu'il entre dans la partie Windows Install. C'est pourquoi nous 
+recommandons que SoftIce ne soit pas charg‚ lorsque vous installez Windows 
+3.1.
+
+SPEEDFXR
+--------
+Ce programme n'est pas compatible avec Windows 3.1 lorsqu'il est ex‚cut‚ 
+comme TSR. Lorsqu'il est ex‚cut‚ dans la m‚moire, ce programme tente 
+d'acc‚l‚rer les lecteurs de disquettes au lieu de les ralentir. L'ex‚cution de 
+SPEEDFXR -X se passe mieux avec Windows 3.1 car il ne reste pas dans la 
+m‚moire. La vitesse de rotation des lecteurs de disquettes ne semble pas ˆtre 
+affect‚e n‚gativement si vous ex‚cutez SPEEDFXR avec l'indicateur  -X.
+
+SUBST (MS-DOS)
+--------------
+La commande MS-DOS SUBST fonctionne correctement avec Windows 3.1 … 
+condition que vous ne changiez pas l'‚tat des lecteurs ®substitu‚s¯ PENDANT 
+une session Windows 3.1. Si vous utilisez la commande SUBST avant de 
+lancer Windows 3.1, NE CHANGEZ PAS l'‚tat des lecteurs pour lesquels vous 
+avez utilis‚ la commande SUBST … partir d'une zone VM/MS-DOS dans 
+Windows 3.1 et n'ajoutez ni ne supprimez de lecteurs ®substitu‚s¯ lors d'une 
+session Windows et … partir de Windows.
+
+UTILITAIRE DE CACHE SUPER PC-KWIK (SUPERPCK.EXE)
+------------------------------------------------
+Cet utilitaire de cache ne doit pas ˆtre utilis‚ simultan‚ment avec Smartdrive. 
+Il n'y a aucun avantage … ex‚cuter ces deux utilitaires en mˆme temps. Nous 
+vous recommandons d'utiliser Smartdrive (automatiquement install‚ avec 
+Windows 3.1) plut“t que l'utilitaire de cache  PC-Kwik.
+
+GESTIONNAIRE D'ADAPTATEUR HOTE TRANTOR T100 (TSCSI.SYS)
+-------------------------------------------------------
+(Pour un lecteur de disque dur SCSI). Si vous utilisez le gestionnaire Trantor 
+T100, TSCSI.SYS, vous devez disposer de la version 4.33d ou plus r‚cente. 
+(Vous pouvez vous procurer des mises … jour chez Trantor Systems, Ltd.). Les 
+versions plus anciennes de ce gestionnaire identifient le gestionnaire de disque 
+dur SCSI comme lecteur amovible. Le Gestionnaire de fichiers traite le lecteur 
+de disque comme lecteur amovible et pour cette raison, il risque d'y avoir des 
+problŠmes. Un essai d'initialisation du lecteur par le Gestionnaire de fichiers 
+est autoris‚ (puisque Windows 3.1 le considŠre comme amovible), mais se 
+termine par un blocage du systŠme. D'autres r‚sultats inattendus peuvent se 
+produire lorsque vous supprimez des fichiers … partir du Gestionnaire de 
+fichiers.
+
+UMB PRO, version 2.01
+---------------------
+Si vous ex‚cutez UMB PRO, vous aurez peut ˆtre des difficult‚s … ex‚cuter 
+Windows en mode standard. Dans certains cas, le systŠme risque se se bloquer. 
+Par ailleurs, il est d‚conseill‚ d'avoir deux gestionnaires de m‚moire install‚s 
+en mˆme temps. HIMEM.SYS et EMM386.EXE sont automatiquement 
+install‚s avec Windows 3.1. Assurez-vous de n'utiliser qu'UN SEUL 
+gestionnaire de m‚moire.
+
+VACCINE
+-------
+Le programme d'installation se bloque lorsqu'il tente de modifier les fichiers
+CONFIG.SYS et AUTOEXEC.BAT. D'aprŠs les auteurs du produit, il est 
+recommand‚ de ®d‚charger¯ Vaccine avant d'installer Windows 3.1.
+
+VIREX-PC Ver. 1.11
+------------------
+Si VIREXPC.COM est install‚, le programme d'installation et Windows 3.1 se 
+bloqueront lorsque KRNL386.EXE effectuera une op‚ration d'‚criture. La 
+premiŠre fois que Windows 3.1 est charg‚ (lorsque Virex-PC est install‚) il se 
+peut que le systŠme se bloque et vous ramŠne au message d'attente MS-DOS.
+
+VIRUSAFE Ver. 4.0
+-----------------
+Si ce programme est install‚ comme TSR lorsque vous installez Windows 3.1, 
+le programme d'installation risque de se bloquer. Il ne faut donc pas que 
+Virusafe soit install‚ lors de l'installation de Windows 3.1. Ce problŠme 
+semble avoir ‚t‚ corrig‚ dans la  version 4.5 du logiciel. Les auteurs de 
+Virusafe recommandent aux utilisateurs de Windows 3.1 d'ex‚cuter Virusafe 
+avec le commutateur /C. Ce commutateur d‚sactive la d‚tection de 
+changement de m‚moire fournie par Virusafe. Pour plus d'informations, 
+consultez la documentation accompagnant Virusafe.
+
+XGAAIDOS.SYS
+------------
+Lorsque XGAAIDOS.SYS est charg‚, Windows 3.1 se bloque lorsqu'il est 
+ex‚cut‚ en mode standard (WIN /s), dŠs que son sigle s'affiche … l'‚cran.
+
+XMAEM.SYS
+---------
+XMAEM.SYS est un dispositif qui prend la m‚moire ‚tendue et la fait 
+ressembler … la m‚moire XMA. Windows ne peut pas fonctionner en mode 
+prot‚g‚ avec ce programme. Cet utilitaire a ‚t‚ livr‚ avec  IBM DOS 4.0. Il est 
+incompatible avec Windows et vous devez le retirer de votre configuration 
+avant d'essayer d'installer ou d'ex‚cuter Windows 3.1.
+
+XMA2EMS.SYS
+-----------
+XMA2EMS.SYS fonctionne lorsque XMA est pr‚sent pour fournir le support 
+de l'EMS API.  Windows ne pourra ˆtre ex‚cut‚ que s'il est charg‚ sur une 
+machine avec une carte XMA. Il est ‚galement livr‚ avec IBM DOS 4.0.
+
+Remarque … propos de Novell NetWare
+===================================
+Cette version beta de Windows comprend la version mise … jour de plusieurs 
+fichiers Novell NetWare. Ces versions contiennent des am‚liorations 
+importantes et des suppressions de bogues qui peuvent ˆtre n‚cessaires pour 
+ex‚cuter la version 3.1 de Windows. Lorsque vous ex‚cutez Novell NetWare, 
+Windows 
+Install copie les fichiers suivants dans votre r‚pertoire Windows :
+
+        NETX.COM        
+        IPX.OBJ         
+        IPXODI.COM      
+        LSL.COM         
+        TBMI2.COM       
+
+Avant d'ex‚cuter Windows, effectuez les ‚tapes suivantes :
+
+1. Remplacez votre interpr‚teur de commandes NetWare actuel par le fichier 
+NETX.COM qui vous est fourni. Votre interpr‚teur de commandes actuel peut 
+porter l'un des noms suivants :
+
+        NET3.COM     XMSNET3.COM     EMSNET3.COM
+        NET4.COM     XMSNET4.COM     EMSNET4.COM
+        NET5.COM     XMSNET5.COM     EMSNET5.COM
+        NETX.COM     XMSNETX.COM     EMSNETX.COM
+
+NETX.COM s'ex‚cute avec n'importe quelle version de MS-DOS.
+Si vous avez besoin des versions EMS ou XMS NETX, vous pouvez les 
+t‚l‚charger deWindows 3.1 Beta forum sur CompuServe.
+
+2. Si vous ex‚cutez IPXODI.COM et LSL.COM de Novell, il vous faudra 
+mettre ces fichiers … niveau avec les version qui vous sont fournies.
+
+3. Si vous comptez ex‚cuter Windows en mode standard, vous devriez charger 
+l'utilitaire r‚sidant en m‚moire TBMI2.COM lorsque vous ex‚cutez Windows. 
+Novell vous recommande de cr‚er un fichier de traitement par lots qui 
+chargera cet utilitaire lorsque vous lancerez Windows et qui le d‚chargera 
+lorsque vous quitterez Windows. Ce fichier de traitement par lots pourrait ˆtre 
+nomm‚ RUNWIN.BAT et se pr‚senter comme ceci :
+
+        TBMI2
+        WIN
+        TBMI2 /U
+
+   TBMI2  vous permet d'ex‚cuter en toute s‚curit‚ des applications qui 
+utilisent les fonctions NetWare IPX et SPX sous Windows en mode standard 
+ou avec la commutation de tƒches de MS-DOS 5.0. Pour plus d'informations 
+sur l'ex‚cution de TBMI2.COM, lisez le document TBMI2.TXT sous Windows 
+3.1 Beta forum sur CompuServe.
+
+4. Si vous ex‚cutez IPX.COM de Novell, il faut que votre administrateur du 
+systŠme vous construise une nouvelle version en utilisant le IPX.OBJ qui vous 
+est fourni.
